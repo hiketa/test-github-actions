@@ -1,0 +1,16 @@
+# ワークフロー名(省略可能だが、分かりづらくなるので書くこと)
+name: Hello
+# イベント(発動のトリガー。ここではgit pushされたとき)
+on: push
+# ジョブに関する定義
+jobs:
+  # ジョブID
+  hello:
+    # ランナー(ここではUbuntu)
+    runs-on: ubuntu-latest
+    # ステップに関する定義
+    steps:
+      # シェルコマンド実行
+      - run: echo "Hello, world"
+      # アクション呼び出し
+      - uses: actions/checkout@v4
