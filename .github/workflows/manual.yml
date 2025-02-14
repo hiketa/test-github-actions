@@ -1,0 +1,15 @@
+name: Manual
+on:
+  workflow_dispatch:
+    inputs:
+      greeting:
+        type: string
+        default: Hello
+        require: true
+        description: A cheerful word
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      # 入力パラメーターは${{ }}で埋め込み可能(GitHub Actionsの独自記法)。
+      - run: echo "${{ inputs.greeting }}"
